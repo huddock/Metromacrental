@@ -8,11 +8,17 @@
   <!-- Prevent indexing while it's a holding page -->
   <meta name="robots" content="noindex, nofollow" />
 
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#fbfdff" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://metromacrentals.com/">
+
   <!-- OG share preview -->
   <meta property="og:title" content="Metro Mac Rentals — Coming Soon" />
   <meta property="og:description" content="MacBook rentals across Metro Manila. Same-day delivery. Daily / Weekly / Monthly. Launching soon." />
   <meta property="og:url" content="https://metromacrentals.com" />
-  <meta property="og:image" content="https://metromacrentals.com/og-cover.jpg" />
+  <meta property="og:image" content="https://metromacrentals.com/assets/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="/favicon.ico" />
@@ -101,7 +107,7 @@
     <h1>We’re launching soon</h1>
     <p class="sub">Same-day delivery • Daily / Weekly / Monthly • Transparent pricing</p>
 
-    <!-- Countdown (set your launch date below) -->
+    <!-- Countdown -->
     <div id="countdown" class="count" aria-live="polite" hidden>
       <div><strong id="d">00</strong><div class="small">Days</div></div>
       <div><strong id="h">00</strong><div class="small">Hours</div></div>
@@ -109,11 +115,14 @@
       <div><strong id="s">00</strong><div class="small">Seconds</div></div>
     </div>
 
-    <!-- Notify form (email capture via Formspree; replace with your endpoint) -->
-    <form class="row" action="https://formspree.io/f/your_form_id" method="POST">
+    <!-- Notify form -->
+    <form class="row" id="notify" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="hidden" name="_subject" value="Metro Mac Rentals — Launch Notify">
+      <input type="hidden" name="_redirect" value="https://metromacrentals.com/thank-you.html">
       <input type="email" name="email" placeholder="Enter your email to get notified" required>
       <button type="submit">Notify me</button>
     </form>
+    <p id="ok" class="small" style="display:none; margin-top:8px;">Thanks! We’ll notify you at launch.</p>
 
     <!-- WhatsApp quick lead -->
     <div class="row" style="margin-top:10px">
@@ -130,8 +139,8 @@
   </div>
 
   <script>
-    // ===== Set your launch date (YYYY-MM-DDTHH:mm:ss)
-    const launchAt = new Date('2025-09-01T09:00:00'); // <- change this
+    // ===== Set your launch date (YYYY-MM-DDTHH:mm:ss+TZ)
+    const launchAt = new Date('2025-09-01T09:00:00+08:00');
     const cd = document.getElementById('countdown');
     const pad = n => String(n).padStart(2, '0');
     function tick(){
@@ -160,8 +169,15 @@
       window.open(`https://wa.me/${number}?text=${msg}`, '_blank');
     }
 
-    // year
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Formspree in-page confirmation
+    document.getElementById('notify').addEventListener('submit', function(){
+      setTimeout(() => {
+        document.getElementById('ok').style.display = 'block';
+      }, 500);
+    });
   </script>
 </body>
 </html>

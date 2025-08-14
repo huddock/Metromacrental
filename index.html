@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metro Mac Rentals • MacBook Rentals in Metro Manila</title>
+  <meta name="description" content="Rent MacBooks in Metro Manila. Same‑day delivery, daily/weekly/monthly plans, student & corporate packages. Message us on WhatsApp for a quote." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230f172a' d='M32 6a8 8 0 0 1 8 8v6h8a8 8 0 0 1 8 8v14a10 10 0 0 1-10 10H18A10 10 0 0 1 8 42V28a8 8 0 0 1 8-8h8v-6a8 8 0 0 1 8-8z'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b1020;          /* deep navy */
+      --bg-soft: #0f172a;     /* slate-900 */
+      --card: #0f1b33;        /* indigo-ish */
+      --text: #e5e7eb;        /* slate-200 */
+      --muted: #9aa3b2;       /* slate-400 */
+      --brand: #22d3ee;       /* cyan-400 */
+      --brand-2: #60a5fa;     /* blue-400 */
+      --ok: #22c55e;          /* green-500 */
+      --warn: #f59e0b;        /* amber-500 */
+      --danger: #ef4444;      /* red-500 */
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(3,7,18,.45);
+      --shadow-soft: 0 6px 18px rgba(2,6,23,.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(96,165,250,.08), transparent),
+                  radial-gradient(900px 700px at -20% 10%, rgba(34,211,238,.08), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: linear-gradient(90deg, rgba(34,211,238,.15), rgba(96,165,250,.15)); border: 1px solid rgba(255,255,255,.06); color: var(--text); font-size: 14px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, #111a30, #0b1224); color: #fff; box-shadow: var(--shadow-soft); transition: transform .15s ease, box-shadow .15s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+    .btn-primary { background: linear-gradient(90deg, var(--brand), var(--brand-2)); border: none; font-weight: 700; }
+    .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,.18); }
+    header {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(140%) blur(8px);
+      background: linear-gradient(180deg, rgba(15,23,42,.8), rgba(15,23,42,.4));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .2px; }
+    .brand i { width: 28px; height: 28px; display: inline-block; background: linear-gradient(135deg, var(--brand), var(--brand-2)); border-radius: 8px; }
+    .navlinks { display: none; gap: 18px; }
+    .navlinks a { color: var(--muted); font-weight: 600; }
+    @media (min-width: 900px) { .navlinks { display: flex; } }
+
+    .hero { padding: 74px 0 40px; text-align: center; }
+    .hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.05; margin: 12px 0; letter-spacing: -0.02em; }
+    .hero p { color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); max-width: 780px; margin: 0 auto 22px; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+
+    .badges { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 26px auto 10px; max-width: 980px; }
+    .badge { padding: 12px 14px; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.03); border-radius: 14px; display:flex; gap:10px; align-items:center; }
+
+    section { padding: 54px 0; }
+    .section-title { font-size: 28px; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .section-sub { color: var(--muted); margin-top: 2px; margin-bottom: 18px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-soft); }
+    .card h3 { margin-top: 6px; margin-bottom: 8px; font-size: 22px; }
+    .price { font-size: 28px; font-weight: 800; letter-spacing: -.01em; }
+    .price small { font-weight: 600; font-size: 14px; color: var(--muted); }
+    .list { margin: 10px 0 12px; padding-left: 18px; }
+    .list li { margin: 6px 0; color: #cdd5e1; }
+
+    .inventory { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .inv { border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border-radius: var(--radius); overflow: hidden; }
+    .inv .img { height: 150px; background: radial-gradient(180px 90px at 60% 30%, rgba(34,211,238,.12), transparent),
+                           radial-gradient(160px 80px at 20% 70%, rgba(96,165,250,.12), transparent),
+                           #0a1226; display:flex; align-items:center; justify-content:center; }
+    .inv .img svg { opacity: .9; }
+    .inv .body { padding: 14px; }
+    .inv h4 { margin: 0 0 4px; font-size: 18px; }
+    .tag { display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:6px 10px; border:1px solid rgba(255,255,255,.08); color: #d1fae5; background: rgba(34,197,94,.12); font-size: 12px; font-weight:700; }
+
+    .faq { border-top: 1px solid rgba(255,255,255,.08); }
+    details { border-bottom: 1px solid rgba(255,255,255,.08); padding: 14px 0; }
+    details summary { cursor: pointer; font-weight: 700; }
+    details p { color: var(--muted); margin-top: 8px; }
+
+    .contact { display:grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
+    @media (max-width: 900px){ .contact { grid-template-columns: 1fr; } }
+    form { display: grid; gap: 10px; }
+    input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: rgba(2,6,23,.6); color: var(--text); }
+    textarea { min-height: 120px; }
+    .notice { font-size: 13px; color: var(--muted); }
+    footer { border-top: 1px solid rgba(255,255,255,.06); padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 900px){ .grid-3 { grid-template-columns: 1fr; } }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+  <script>
+    function openWhatsApp(){
+      const msg = encodeURIComponent("Hi Metro Mac Rentals! I'd like to rent a MacBook. My location: ____. Duration: ____. Budget: ____. Model preference: ____.");
+      const number = "639000000000"; // TODO: replace with your WhatsApp number (no + sign)
+      window.open(`https://wa.me/${number}?text=${msg}`, '_blank');
+    }
+    function calcEstimate(e){
+      e.preventDefault();
+      const plan = document.getElementById('plan').value; // day, week, month
+      const model = document.getElementById('model').value; // air, pro
+      const qty = +document.getElementById('qty').value || 1;
+      const duration = +document.getElementById('duration').value || (plan==='day'?1:plan==='week'?1:1);
+      // sample base rates (edit to your actual pricing)
+      const base = { day: { air: 600, pro: 800 }, week: { air: 1800, pro: 2400 }, month: { air: 4000, pro: 5500 } };
+      const rate = base[plan][model];
+      const subtotal = rate * duration * qty;
+      const deposit = 3000 * Math.min(qty, 4); // cap sample deposit
+      const delivery = 250; // flat example within MM
+      const totalDue = subtotal + deposit + delivery;
+      document.getElementById('est-out').innerHTML = `\n        <div class='card'>\n          <div class='grid-3'>\n            <div><div class='muted'>Subtotal</div><div class='price'>₱${subtotal.toLocaleString()}</div></div>\n            <div><div class='muted'>Refundable Deposit</div><div class='price'>₱${deposit.toLocaleString()}</div></div>\n            <div><div class='muted'>Delivery (Metro Manila)</div><div class='price'>₱${delivery.toLocaleString()}</div></div>\n          </div>\n          <div style='margin-top:12px; font-weight:800; font-size:22px'>Estimated Total Due: ₱${totalDue.toLocaleString()}</div>\n          <div class='notice'>*For guidance only. Final quote depends on exact model, stock, and address.</div>\n        </div>`;
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Metro Mac Rentals",
+    "image": "",
+    "url": "",
+    "telephone": "+63 900 000 0000",
+    "address": {"@type": "PostalAddress", "addressLocality": "Metro Manila", "addressCountry": "PH"},
+    "areaServed": "Metro Manila",
+    "priceRange": "₱₱",
+    "description": "MacBook rentals in Metro Manila with daily, weekly, and monthly plans. Same‑day delivery available."
+  }
+  </script>
+</head>
+<body>
+    <script src="script.js" defer></script>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><i></i><span>Metro Mac Rentals</span></div>
+        <div class="navlinks">
+          <a href="#pricing">Pricing</a>
+          <a href="#inventory">Inventory</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div style="display:flex; gap:10px">
+          <button class="btn btn-outline" onclick="location.href='#contact'">Get a quote</button>
+          <button class="btn btn-primary" onclick="openWhatsApp()">WhatsApp</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="pill">Metro Manila • Same‑day delivery • MacBook specialists</span>
+      <h1>Rent a MacBook today—daily, weekly, or monthly.</h1>
+      <p>Reliable Mac rentals across Metro Manila with transparent pricing. Perfect for students, freelancers, teams, and events. Every unit is health‑checked, cleaned, and delivered with a charger and case.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="openWhatsApp()">Message us on WhatsApp</button>
+        <a class="btn" href="#pricing">See pricing</a>
+        <a class="btn" href="#estimate">Instant estimate</a>
+      </div>
+      <div class="badges">
+        <div class="badge">✅ ID + refundable deposit</div>
+        <div class="badge">🚚 Delivery & pickup (MM)</div>
+        <div class="badge">🧰 Free charger • case</div>
+        <div class="badge">🛡️ Optional damage protection</div>
+      </div>
+    </section>
+
+    <section id="pricing" class="container">
+      <h2 class="section-title">Simple, transparent pricing</h2>
+      <p class="section-sub">Edit the sample rates below to match your actual offers. MacBook models can command a premium; consider bundle discounts for 3+ units.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="tag">Student / Short‑term</div>
+          <h3>Daily</h3>
+          <div class="price">₱600 <small>/ day (Air)</small></div>
+          <div class="price" style="margin-top:4px">₱800 <small>/ day (Pro)</small></div>
+          <ul class="list">
+            <li>Included: charger, case, macOS updated</li>
+            <li>Refundable deposit from ₱3,000</li>
+            <li>Delivery within Metro Manila</li>
+          </ul>
+          <button class="btn btn-outline" onclick="location.href='#contact'">Book now</button>
+        </div>
+        <div class="card">
+          <div class="tag">Freelancer / WFH</div>
+          <h3>Weekly</h3>
+          <div class="price">₱1,800 <small>/ week (Air)</small></div>
+          <div class="price" style="margin-top:4px">₱2,400 <small>/ week (Pro)</small></div>
+          <ul class="list">
+            <li>Optional: MS Office / iWork setup</li>
+            <li>Multi‑week discount available</li>
+            <li>Basic support via chat</li>
+          </ul>
+          <button class="btn btn-outline" onclick="location.href='#contact'">Get a quote</button>
+        </div>
+        <div class="card">
+          <div class="tag">Teams / Events</div>
+          <h3>Monthly</h3>
+          <div class="price">₱4,000 <small>/ month (Air)</small></div>
+          <div class="price" style="margin-top:4px">₱5,500 <small>/ month (Pro)</small></div>
+          <ul class="list">
+            <li>Bundle discounts (3+ units)</li>
+            <li>On‑site swap for DOA units</li>
+            <li>Optional damage protection</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openWhatsApp()">Message for bulk rates</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="estimate" class="container">
+      <h2 class="section-title">Instant estimate (editable)</h2>
+      <p class="section-sub">Quickly calculate an estimated total. Update rates in the small script at the top of this file.</p>
+      <div class="card">
+        <form onsubmit="calcEstimate(event)">
+          <div class="grid-3">
+            <label>Plan<select id="plan"><option value="day">Daily</option><option value="week">Weekly</option><option value="month" selected>Monthly</option></select></label>
+            <label>Model<select id="model"><option value="air" selected>MacBook Air</option><option value="pro">MacBook Pro</option></select></label>
+            <label>Units<input id="qty" type="number" min="1" value="1" /></label>
+          </div>
+          <div class="grid-3">
+            <label>Duration<input id="duration" type="number" min="1" value="1" /><div class="notice">Days / Weeks / Months</div></label>
+            <div></div><div></div>
+          </div>
+          <button class="btn btn-primary" type="submit">Calculate estimate</button>
+        </form>
+        <div id="est-out" style="margin-top:14px"></div>
+      </div>
+    </section>
+
+    <section id="inventory" class="container">
+      <h2 class="section-title">Available inventory</h2>
+      <p class="section-sub">Swap in your actual devices below. Tip: group by tier (Air basic / Air M1 / Pro Intel / Pro M‑series).</p>
+      <div class="inventory">
+        <div class="inv">
+          <div class="img">
+            <svg width="140" height="100" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="180" height="80" rx="10" stroke="white" opacity=".2"/><rect x="20" y="30" width="160" height="60" rx="6" fill="white" opacity=".06"/></svg>
+          </div>
+          <div class="body">
+            <h4>MacBook Air (2019, i5, 8GB/256GB)</h4>
+            <div class="muted">Best for docs, web, Zoom</div>
+            <div style="margin-top:8px; display:flex; gap:8px; align-items:center">
+              <span class="tag">₱4,000/mo</span>
+              <span class="notice">₱600/day • ₱1,800/week</span>
+            </div>
+          </div>
+        </div>
+        <div class="inv">
+          <div class="img">
+            <svg width="140" height="100" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="180" height="80" rx="10" stroke="white" opacity=".2"/><rect x="20" y="30" width="160" height="60" rx="6" fill="white" opacity=".06"/></svg>
+          </div>
+          <div class="body">
+            <h4>MacBook Air (M1, 2020, 8GB/256GB)</h4>
+            <div class="muted">Great battery, silent, fast</div>
+            <div style="margin-top:8px; display:flex; gap:8px; align-items:center">
+              <span class="tag">₱5,000/mo</span>
+              <span class="notice">₱800/day • ₱2,400/week</span>
+            </div>
+          </div>
+        </div>
+        <div class="inv">
+          <div class="img">
+            <svg width="140" height="100" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="180" height="80" rx="10" stroke="white" opacity=".2"/><rect x="20" y="30" width="160" height="60" rx="6" fill="white" opacity=".06"/></svg>
+          </div>
+          <div class="body">
+            <h4>MacBook Pro 13" (2018–2020, 16GB/512GB)</h4>
+            <div class="muted">Heavier workloads, dev tools</div>
+            <div style="margin-top:8px; display:flex; gap:8px; align-items:center">
+              <span class="tag">₱5,500/mo</span>
+              <span class="notice">₱850/day • ₱2,800/week</span>
+            </div>
+          </div>
+        </div>
+        <div class="inv">
+          <div class="img">
+            <svg width="140" height="100" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="180" height="80" rx="10" stroke="white" opacity=".2"/><rect x="20" y="30" width="160" height="60" rx="6" fill="white" opacity=".06"/></svg>
+          </div>
+          <div class="body">
+            <h4>MacBook Pro 14" (M1 Pro, 2021, 16GB/512GB)</h4>
+            <div class="muted">Video editing, design suites</div>
+            <div style="margin-top:8px; display:flex; gap:8px; align-items:center">
+              <span class="tag">₱8,500/mo</span>
+              <span class="notice">Request bulk quote</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">Add‑ons & services</h2>
+      <div class="cards">
+        <div class="card"><h3>Software setup</h3><ul class="list"><li>MS Office / iWork</li><li>Chrome, Zoom, Slack</li><li>Adobe CC (BYO license)</li></ul></div>
+        <div class="card"><h3>Accessories</h3><ul class="list"><li>USB‑C hub • Mouse • Keyboard</li><li>External monitor (24–27")</li><li>Headset / webcam</li></ul></div>
+        <div class="card"><h3>Business options</h3><ul class="list"><li>3+ unit bundle rates</li><li>On‑site deployment</li><li>Invoice, OR, vendor onboarding</li></ul></div>
+      </div>
+    </section>
+
+    <section id="faq" class="container faq">
+      <h2 class="section-title">FAQ</h2>
+      <details open>
+        <summary>What are the requirements?</summary>
+        <p>Government ID, selfie with ID, and proof of billing or work/school ID. Refundable security deposit applies (amount depends on model and quantity).</p>
+      </details>
+      <details>
+        <summary>Where do you deliver?</summary>
+        <p>Anywhere within Metro Manila. Same‑day delivery available for bookings before 2 PM. Nearby Rizal/Cavite/Bulacan by arrangement.</p>
+      </details>
+      <details>
+        <summary>What payment methods do you accept?</summary>
+        <p>GCash, bank transfer (BPI/BDO/UnionBank), or cash on delivery for repeat customers.</p>
+      </details>
+      <details>
+        <summary>What if the device is damaged or lost?</summary>
+        <p>Minor wear is fine. For damage/loss, the renter covers repair or replacement, less normal depreciation. Optional damage protection available for a small fee.</p>
+      </details>
+    </section>
+
+    <section id="contact" class="container">
+      <h2 class="section-title">Contact & booking</h2>
+      <p class="section-sub">Tell us what you need and we’ll confirm stock + delivery. For fastest response, message us on WhatsApp.</p>
+      <div class="contact">
+        <div>
+          <form action="mailto:hello@metromacrentals.ph" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
+            <select name="plan">
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly" selected>Monthly</option>
+            </select>
+            <textarea name="message" placeholder="Units needed, location, start date, model preference"></textarea>
+            <div class="notice">By submitting, you agree to our rental terms. We’ll never spam you.</div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px">
+              <button class="btn btn-primary" type="submit">Send request</button>
+              <button class="btn" type="button" onclick="openWhatsApp()">Chat on WhatsApp</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Business details</h3>
+          <ul class="list" style="margin-top:6px">
+            <li><strong>Hours:</strong> Mon–Sat, 9:00–18:00</li>
+            <li><strong>Service area:</strong> Metro Manila</li>
+            <li><strong>Email:</strong> hello@metromacrentals.ph</li>
+            <li><strong>WhatsApp / Viber:</strong> +63 900 000 0000</li>
+            <li><strong>Facebook:</strong> fb.com/MetroMacRentals</li>
+            <li><strong>TikTok / IG:</strong> @metromacrentals</li>
+          </ul>
+          <div class="notice">Replace placeholders with your actual contact info.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>© <span id="y"></span> Metro Mac Rentals • All rights reserved</div>
+      <div class="mono">Terms • Privacy • Rental Agreement</div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

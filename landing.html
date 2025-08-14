@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rent a MacBook Today — Metro Manila | Metro Mac Rentals</title>
+  <meta name="description" content="Rent a MacBook in Metro Manila with same-day delivery. Transparent daily/weekly/monthly pricing. Message us on WhatsApp to get a quote.">
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rent a MacBook Today — Metro Manila">
+  <meta property="og:description" content="Same-day delivery, transparent pricing. Chat on WhatsApp for a quick quote.">
+  <meta property="og:url" content="https://metromacrentals.com/landing.html">
+  <meta property="og:image" content="https://metromacrentals.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    /* ==== Pastel Apple-ish theme: light pink + blue, glassmorphism ==== */
+    :root{
+      --bg:#f7f9ff; --ink:#0b1020; --ink-sub:#5b6477;
+      --brand:#7ecbff; --brand-2:#f8b4d9; --border:rgba(15,23,42,.08);
+      --card:rgba(255,255,255,.65); --radius:18px;
+      --shadow:0 10px 30px rgba(14,30,80,.12); --ring:0 0 0 3px rgba(126,203,255,.35);
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--ink); line-height:1.6;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(248,180,217,.28), transparent),
+        radial-gradient(900px 700px at -20% 10%, rgba(126,203,255,.28), transparent),
+        linear-gradient(180deg, #fbfdff 0%, #f7f9ff 100%);
+    }
+    .container{max-width:980px;margin:0 auto;padding:0 20px}
+    .glass{background:var(--card);backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:12px;border:1px solid rgba(15,23,42,.08);background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(255,255,255,.6));color:#0b1020;box-shadow:var(--shadow);font-weight:700}
+    .btn-primary{border:none;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    .pill{display:inline-flex;gap:8px;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,rgba(126,203,255,.22),rgba(248,180,217,.22));border:1px solid var(--border)}
+    header{padding:16px 0}
+    .hero{padding:40px 0 18px;text-align:center}
+    .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.05;margin:8px 0;background:linear-gradient(90deg,#0b1020,#364155);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--ink-sub);max-width:760px;margin:0 auto}
+    .stack{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:24px}
+    @media (max-width:900px){.stack{grid-template-columns:1fr}}
+    .list{padding-left:18px;margin:8px 0}
+    .kpis{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+    .kpi{flex:1 1 160px;padding:12px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.7);text-align:center}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    footer{padding:28px 0 40px;color:#4b5565;text-align:center}
+    input, select, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.75)}
+    input:focus,select:focus,textarea:focus{outline:none;box-shadow:var(--ring)}
+    .price{font-weight:800}
+  </style>
+  <script>
+    // WhatsApp helper with UTM note
+    function openWhatsApp(){
+      const params = new URLSearchParams(window.location.search);
+      const utm = ['utm_source','utm_medium','utm_campaign'].map(k=>params.get(k)?`${k}:${params.get(k)}`:null).filter(Boolean).join(' | ');
+      const msg = encodeURIComponent(
+        `Hi Metro Mac Rentals! I'd like to rent a MacBook.\nLocation: ____\nStart date: ____\nDuration: Daily/Weekly/Monthly\nUnits: __\nModel: Air/Pro\n${utm ? '\nAd: '+utm : ''}`
+      );
+      const number = "639068191698"; // your WhatsApp number (no +)
+      window.open(`https://wa.me/${number}?text=${msg}`,'_blank');
+    }
+  </script>
+</head>
+<body>
+  <header class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px;font-weight:800">
+        <i style="width:28px;height:28px;background:linear-gradient(135deg,#7ecbff,#f8b4d9);display:inline-block;border-radius:8px"></i>
+        Metro Mac Rentals
+      </div>
+      <!-- Keep only one exit to main site if you want -->
+      <a href="/" class="btn" style="font-weight:600">Main site</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <span class="pill">Metro Manila • Same-day delivery</span>
+      <h1>Rent a MacBook today.</h1>
+      <p>Transparent daily / weekly / monthly pricing. Health-checked units. Charger & case included. We deliver across Metro Manila.</p>
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px">
+        <button class="btn btn-primary" onclick="openWhatsApp()">Get quote on WhatsApp</button>
+        <a href="#form" class="btn">Request a callback</a>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="price">₱600 / day</div><small>MacBook Air (sample)</small></div>
+        <div class="kpi"><div class="price">₱1,800 / week</div><small>MacBook Air (sample)</small></div>
+        <div class="kpi"><div class="price">₱4,000 / month</div><small>MacBook Air (sample)</small></div>
+      </div>
+    </section>
+
+    <!-- BENEFITS + TRUST -->
+    <section class="stack">
+      <div class="glass" style="padding:18px">
+        <h2 style="margin:0 0 8px">Why choose us</h2>
+        <ul class="list">
+          <li>Same-day delivery for bookings before 2 PM</li>
+          <li>Health-checked devices (battery, keyboard, ports)</li>
+          <li>Flexible plans (Daily / Weekly / Monthly)</li>
+          <li>Optional damage protection</li>
+          <li>Bundle discounts from 3+ units</li>
+        </ul>
+        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="openWhatsApp()">Message on WhatsApp</button>
+          <a class="btn" href="/rental-agreement.html" target="_blank" rel="noopener">Rental terms</a>
+        </div>
+      </div>
+      <div class="glass" style="padding:18px">
+        <h3 style="margin-top:0">Trusted by teams & students</h3>
+        <div class="grid-3">
+          <div>
+            <img src="mbp16inch.jpeg" alt="MacBook Pro 14 setup" style="width:100%;border-radius:12px">
+            <small>Pro 14″ for video editing</small>
+          </div>
+          <div>
+            <img src="mbp16inch.jpeg" alt="MacBook Air M1" style="width:100%;border-radius:12px">
+            <small>Air M1 for WFH & study</small>
+          </div>
+          <div>
+            <img src="/images/delivery.jpg" alt="Same-day delivery" style="width:100%;border-radius:12px">
+            <small>Same-day delivery (MM)</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section style="margin-top:18px">
+      <div class="glass" style="padding:18px">
+        <h2 style="margin:0 0 8px">Recent reviews</h2>
+        <div class="grid-3">
+          <blockquote>“Got a MacBook the same day. Clean unit, smooth process.” — <strong>Mia, Makati</strong></blockquote>
+          <blockquote>“Booked 6 Pros for our event. On-time setup. Will rent again.” — <strong>Jared, BGC</strong></blockquote>
+          <blockquote>“Great battery life on the Air M1. Deposit refunded fast.” — <strong>Paolo, QC</strong></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section id="form" style="margin-top:18px">
+      <div class="glass" style="padding:18px">
+        <h2 style="margin:0 0 8px">Request a callback</h2>
+        <form action="https://formspree.io/f/your-id" method="POST">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <input name="name" placeholder="Full name" required>
+            <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+            <select name="plan"><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select>
+            <select name="model"><option value="air">MacBook Air</option><option value="pro">MacBook Pro</option></select>
+          </div>
+          <textarea name="message" placeholder="Units, location, start date" style="margin-top:10px"></textarea>
+          <input type="hidden" name="utm" id="utmField">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+            <button class="btn btn-primary" type="submit">Request quote</button>
+            <button class="btn" type="button" onclick="openWhatsApp()">Or chat on WhatsApp</button>
+          </div>
+          <small style="color:#5b6477;display:block;margin-top:8px">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>.</small>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="text-align:center">
+      © <span id="y"></span> Metro Mac Rentals • <a href="/">Main site</a> • <a href="/rental-agreement.html">Rental Agreement</a>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      // Put UTMs in hidden field for your form backend
+      (function(){
+        const p = new URLSearchParams(location.search);
+        const keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+        const data = keys.reduce((acc,k)=>{ if(p.get(k)) acc.push(k+':'+p.get(k)); return acc; }, []).join(' | ');
+        if(data){ document.getElementById('utmField').value = data; }
+      })();
+    </script>
+  </footer>
+</body>
+</html>
+`

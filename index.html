@@ -5,32 +5,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Metro Mac Rentals — We’ll be live soon</title>
-  <meta name="description" content="Metro Mac Rentals — MacBook rentals for creatives in Metro Manila & South Luzon. We’ll be live soon. Show your interest below to get notified." />
+  <title>MacBook Rentals in Metro Manila — We’ll Be Live Soon | Metro Mac Rentals</title>
+  <meta name="description" content="Metro Mac Rentals — premium MacBook rentals for creatives in Metro Manila and nearby South Luzon. We’ll be live soon. Leave your details to get notified." />
   <link rel="canonical" href="https://metromacrentals.com/" />
   <meta name="robots" content="index, follow" />
   <meta http-equiv="content-language" content="en-PH" />
+
+  <!-- Geo signals -->
   <meta name="geo.region" content="PH-00" />
   <meta name="geo.placename" content="Metro Manila" />
-  <meta name="geo.country" content="PH" />
+  <meta name="geo.position" content="14.5995;120.9842" />
+  <meta name="ICBM" content="14.5995, 120.9842" />
+
+  <!-- Optional keywords (not required for Google but fine to include) -->
+  <meta name="keywords" content="MacBook rental Metro Manila, laptop rental NCR, Mac rental Philippines, creative rentals Manila, video editing Mac rental" />
+
+  <!-- Open Graph / Twitter -->
   <meta property="og:locale" content="en_PH" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Metro Mac Rentals — We’ll be live soon" />
-  <meta property="og:description" content="MacBook rentals for creatives in Metro Manila & South Luzon. Show your interest below." />
+  <meta property="og:title" content="MacBook Rentals in Metro Manila — We’ll Be Live Soon" />
+  <meta property="og:description" content="MacBook rentals for creatives in Metro Manila & South Luzon. Show your interest below to get notified." />
   <meta property="og:url" content="https://metromacrentals.com/" />
   <meta property="og:site_name" content="Metro Mac Rentals" />
-  <meta property="og:image" content="https://metromacrentals.com/assets/mmrlogo.png" />
+  <meta property="og:image" content="https://metromacrentals.com/assets/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#fbfdff" />
   <link rel="icon" href="/favicon.ico" />
 
-  <!-- Optional font fallback (Halcom self-hosted if you have it) -->
+  <!-- LocalBusiness JSON-LD (Metro Manila focused) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Metro Mac Rentals",
+    "url":"https://metromacrentals.com/",
+    "description":"MacBook rentals for creatives in Metro Manila & South Luzon.",
+    "telephone":"+63 906 819 1698",
+    "email":"hello@metromacrentals.com",
+    "priceRange":"₱₱",
+    "image":"https://metromacrentals.com/assets/og-cover.jpg",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Metro Manila",
+      "addressRegion":"NCR",
+      "addressCountry":"PH"
+    },
+    "areaServed":[
+      "Metro Manila","Las Piñas","Parañaque","Muntinlupa","Taguig","BGC","San Pedro",
+      "Bacoor","Molino","Dasmariñas"
+    ],
+    "openingHours":"Mo-Sa 09:00-18:00",
+    "sameAs":[
+      "https://www.facebook.com/MetroMacRentals",
+      "https://www.instagram.com/metromacrentals",
+      "https://www.tiktok.com/@metromacrentals"
+    ]
+  }
+  </script>
+
+  <!-- Small FAQ schema (boosts long-tail intent) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Do you serve Metro Manila?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. We cover Las Piñas, Parañaque, Muntinlupa, Taguig/BGC, and nearby South Luzon areas including San Pedro, Bacoor, Molino, and Dasmariñas."}
+      },
+      {
+        "@type":"Question",
+        "name":"When will you launch?",
+        "acceptedAnswer":{"@type":"Answer","text":"We plan to open by November 10, 2025. Leave your details and we’ll notify you."}
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Halcom (self-hosted if you have it) + Manrope fallback -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    @font-face{
+    @font-face {
       font-family:"Halcom";
-      src:url("/assets/fonts/Halcom-Medium.otf") format("woff2");
+      src:url("/assets/fonts/Halcom-Variable.woff2") format("woff2");
       font-weight:200 800; font-style:normal; font-display:swap;
     }
 
@@ -59,14 +118,12 @@
       backdrop-filter: blur(14px) saturate(135%); -webkit-backdrop-filter: blur(14px) saturate(135%);
       padding: clamp(18px, 4vw, 32px);
     }
-    /* Brand */
     .brand{display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:10px}
     .brand-text{font-weight:800; letter-spacing:.2px}
     .logo{display:inline-block; border-radius:10px}
 
     h1{font-size: clamp(28px, 5.5vw, 56px); margin:10px 0 6px; letter-spacing:-.02em}
     p.sub{color:var(--ink-sub); margin:0 0 18px; font-size: clamp(16px, 2.6vw, 18px)}
-
     .pill{
       display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
       background: linear-gradient(90deg, rgba(126,203,255,.22), rgba(248,180,217,.22));
@@ -104,7 +161,7 @@
 </head>
 <body>
   <main class="wrap" role="main">
-    <!-- Inline SVG logo (no external asset required) -->
+    <!-- Brand / Logo -->
     <div class="brand" aria-label="Metro Mac Rentals">
       <svg class="logo" width="34" height="34" viewBox="0 0 64 64" role="img" aria-hidden="true">
         <defs>
@@ -129,7 +186,7 @@
     <!-- Interest capture (Google Form embed) -->
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSdWDzhY9vhSqg03P4QMcJJu3aYF4dZjZW6KAMUCUut-Jn2OrA/viewform?embedded=true"
-      title="Metro Mac Rentals — Interest Form"
+      title="Metro Mac Rentals — Interest Form (Metro Manila)"
       loading="lazy"
       allowfullscreen>
       Loading…
@@ -138,20 +195,20 @@
     <!-- CTAs -->
     <div class="cta" aria-label="Quick contacts">
       <button class="btn-whatsapp" onclick="openWhatsApp()" aria-label="Message us on WhatsApp">
-        <!-- WhatsApp glyph (inline SVG) -->
         <svg viewBox="0 0 32 32" aria-hidden="true">
           <path fill="#FFFFFF" d="M19.11 17.21c-.28-.14-1.62-.8-1.87-.89-.25-.09-.43-.14-.61.14-.18.28-.7.88-.86 1.06-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.62-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.41-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01s-.48.07-.73.34c-.25.28-.96.94-.96 2.29 0 1.35.99 2.65 1.13 2.83.14.18 1.95 2.99 4.73 4.17.66.29 1.17.46 1.57.58.66.21 1.27.18 1.75.11.53-.08 1.62-.66 1.85-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.2-.53-.34z"/>
           <path fill="#25D366" d="M26.69 5.31A13.41 13.41 0 1 0 5.3 26.7L4 30.67l4.08-1.28A13.4 13.4 0 1 0 26.69 5.31zM16 27.4c-2.25 0-4.35-.67-6.1-1.82l-.44-.28-2.62.82.86-2.52-.29-.46a11.4 11.4 0 1 1 9.59 5.26z"/>
         </svg>
         Message on WhatsApp
       </button>
-
       <a class="btn" href="mailto:hello@metromacrentals.com">Email us</a>
     </div>
 
-   
+    <p class="sub" style="margin-top:10px">
+      Serving Metro Manila & South Luzon: Las Piñas • Parañaque • Muntinlupa • Taguig/BGC • San Pedro • Bacoor • Molino • Dasmariñas
+    </p>
 
-    <footer>© <span id="y"></span> Metro Mac Rentals</footer>
+    <footer>© <span id="y"></span> Metro Mac Rentals — Metro Manila, PH</footer>
   </main>
 
   <script>
